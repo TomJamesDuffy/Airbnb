@@ -1,18 +1,11 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+var bnb = require('./src/bnb');
+var Property = require('./src/property');
+var User = require('./src/user');
 
 var app = express();
-
-/*
-var logger = function(req, res, next) {
-console.log('Logging...');
-  next();
-}
-logger needs to go before the app.use(logger)
-
-app.use(logger);
-*/
 
 //View Engine
 app.set('view engine', 'ejs');
@@ -22,54 +15,30 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
-/*
-var person = [{
-  name:'Jeff', 
-  age: 30
-},
-{
-  name:'Jeff',
-  age: 30
-}
-]
-*/
 // Set Static Path for public file
 app.use(express.static(path.join(__dirname, 'public')));
-
-
-var users = [
-{
-  first_name:'John',
-  last_name: 'Doe',
-  place: 'Manhattan'
-},
-{
-  first_name:'John',
-  last_name: 'Doe',
-  place: 'New York'
-}
-
-]
+  console.log(User)
+  var user = new User('Elon Musk');
 
   app.get('/', function(req, res){
-  //res.json(person);
-  res.render("index", { 
-    title: 'Properties',
-    users: users
+    res.redirect('/property');
+  });
+
+  app.get('/property', function(req, res){
+  res.render("index", {
+    user: user
     });
   });
 
-  app.post('/users/add', function(req, res) {
-    console.log(req.body.first_name);
+  app.get('/property/new', function(req, res){
+  res.render("addProperty");
+  });
+
+  app.post('/property/new', function(req, res){
+  user.list(new Property(req.body.name, req.body.dates, req.body.price, req.body.desc))
+    res.redirect('/property');
   });
 
   app.listen(3000, function() {
   console.log('Server Started on Port 3000...');
   });
-
-
-
-
-
-
-

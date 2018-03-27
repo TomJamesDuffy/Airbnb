@@ -1,16 +1,11 @@
-<% include partials/header%> 
-<h1> Add Customer</h1>
-<form method="POST" action="/users/add">
-<label> First Name <label>
-<input type="text" name="first_name">
-<label> Place <label>
-<input type="text" name="place">
-<input type = "submit" value="Submit">
+<% include partials/header%>
+<h1> Welcome to Nebula</h1>
+<form method="GET" action="/property/new">
+<input type = "submit" value="Add Property">
 </form>
-<h1> <%= title %><h1>
 <ul>
-<% users.forEach(function(user){ %>
-  <li><%= user.place  %></li>
+<% user.availableProperties().forEach(function(property){ %>
+  <li><%= property._details.name  %></li>
 <% }) %>
 </ul>
-<% include partials/footer%> 
+<% include partials/footer%>
