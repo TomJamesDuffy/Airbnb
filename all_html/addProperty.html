@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Nebula BnB</title>
+  <script src="src/user.js"></script>
+  <script src="src/property.js"></script>
+  <script src="src/bnb.js"></script>
+</head>
+
+<body>
+
+  <p> ADD PROPERTY PAGE </p>
+  <form name="propertyDetails">
+    <label for="name"> Name </label>
+    <input type="text" name="name"><br>
+    <label for="dates"> Dates </label>
+    <input type="text" name="dates"><br>
+    <label for="price"> Price </label>
+    <input type="text" name="price"><br>
+    <label for="desc"> Description </label>
+    <textarea rows="10" columns="1"type="text" name="desc"> </textarea><br>
+    <input type=Button value="Submit" onClick="window.location = 'index.html'+'#'+userID;user.list(user.createProperty(propertyDetails.name.value, propertyDetails.dates.value, propertyDetails.price.value, propertyDetails.desc.value));"> 
+  </form>
+
+ <script>
+   var userID = window.location.hash.substring(1)
+   bnb = new Bnb();
+   user = bnb.findUser(userID);
+ </script>
+
+</body>
+
+</html>
