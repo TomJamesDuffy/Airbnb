@@ -1,4 +1,4 @@
-function Property(name,desc,price,photo){
+function Property(name,desc,price,dates,photo){
   this._details = {};
   this._details["name"]=name
   this._details["desc"]=desc
