@@ -5,10 +5,26 @@ This is an airbnb clone made in the 6th week of Makers Academy.
 #### By Reena, George, Tom & Giacomo ####
 
 ## Getting Started ##
-
-Javascript version:
+Install node with this link:
 ```
-version
+https://nodejs.org/en/download/
+```
+Then install mongodb like so:
+```
+brew install mongodb
+brew services start mongodb
+```
+To install Jake run:
+```
+npm install -g jake
+```
+To create the database run:
+```
+jake build
+```
+To remove the database run:
+```
+jake delete
 ```
 ## Running the tests ##
 The tests are separated by classes.
@@ -16,7 +32,6 @@ To run them all at once, type:
 ```
 open SpecRunner.html
 ```
-
 ## Built with ##
 
 - [Atom](https://atom.io/) - Text editor

@@ -5,7 +5,10 @@
 </form>
 <ul>
 <% user.availableProperties().forEach(function(property){ %>
-  <li><%= property._details.name  %></li>
+  <div>
+    <li><%= property._details.name  %>, <%= property._details.desc  %>, <%= property._details.price  %>, <%= property._details.dates  %>  </li>
+    <img src="<%= property._details.photo  %>">
+  </div>
 <% }) %>
 </ul>
 <% include partials/footer%>
