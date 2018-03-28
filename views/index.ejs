@@ -7,7 +7,7 @@
 <% user.availableProperties().forEach(function(property){ %>
   <div>
     <li><%= property._details.name  %>, <%= property._details.desc  %>, <%= property._details.price  %>, <%= property._details.dates  %>  </li>
-    <img src="<%= property._details.photo  %>">
+    <img src="<%= property._details.photo  %>" style="height: 200px; width: 200px;">
   </div>
 <% }) %>
 </ul>
