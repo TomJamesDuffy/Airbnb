@@ -1,9 +1,10 @@
-function Property(name,desc,price,dates){
+function Property(name,desc,price,photo){
   this._details = {};
   this._details["name"]=name
   this._details["desc"]=desc
   this._details["price"]=price
   this._details["dates"]=dates
+  this._details["photo"]=photo
 }
 
 Property.prototype.getDetails = function(){
