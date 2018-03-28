@@ -4,7 +4,7 @@
   "description": "testing express",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,10 @@
     "jake": "file:jake",
     "mongoose": "^5.0.12",
     "mongose": "0.0.2-security"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.5",
+    "request": "^2.85.0"
   }
 }
