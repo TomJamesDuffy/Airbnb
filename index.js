@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
   });
 
   app.post('/property/new', function(req, res){
-  user.list(new Property(req.body.name, req.body.dates, req.body.price, req.body.desc))
+  user.list(new Property(req.body.name, req.body.dates, req.body.price, req.body.desc, req.body.photo))
     res.redirect('/property');
   });
 
