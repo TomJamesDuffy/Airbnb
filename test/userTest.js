@@ -27,14 +27,4 @@ describe('User', function() {
 
   });
 
-  describe('#availableProperties', function() {
-
-    it('Should return _propertyList', function() {
-      user.list('Miami')
-      expect(user.availableProperties()).to.include('Miami')
-      expect(user.availableProperties()).to.equal(user._propertyList)
-    });
-
-  });
-
 });

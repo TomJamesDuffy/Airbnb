@@ -23,17 +23,18 @@ describe('User visits signup page', function() {
       browser.assert.success();
     });
 
-    it('Should show Welcome to Nebula and the form', function(done) {
-      request('http://localhost:3000/property/new', function (error, response, body) {
-        expect(body).to.include('Welcome to Nebula');
-        expect(body).to.include('Name');
-        expect(body).to.include('Dates');
-        expect(body).to.include('Price');
-        expect(body).to.include('Description');
-        expect(body).to.include('Photo');
-        done();
-      })
+    it('should have Nebula Digital', function() {
+      browser.assert.text('h1', 'Add a property to host')
     })
+
+    it('has a form to enter room details', function() {
+      browser.assert.elements('form');
+      browser.assert.element('form input[name=name]');
+      browser.assert.element('form input[name=dates]');
+      browser.assert.element('form input[name=price]');
+      browser.assert.element('form textarea[name=desc]');
+      browser.assert.element('form input[name=photo]');
+    });
 
   });
 
@@ -67,30 +68,9 @@ describe('User uses signup page', function() {
       browser.assert.text('h1', 'Welcome to Nebula');
     });
 
-    it('Should show the name of the house on the homepage', function(done) {
-      request('http://localhost:3000/', function (error, response, body) {
-        expect(body).to.include('Space House');
-        done();
-      })
-    })
-
-    it('Should show the date on the homepage', function(done) {
-      request('http://localhost:3000/', function (error, response, body) {
-        expect(body).to.include('Jan');
-        done();
-      })
-    })
-
     it('Should show the price on the homepage', function(done) {
       request('http://localhost:3000/', function (error, response, body) {
-        expect(body).to.include('3000');
-        done();
-      })
-    })
-
-    it('Should show the description on the homepage', function(done) {
-      request('http://localhost:3000/', function (error, response, body) {
-        expect(body).to.include('wow');
+        expect(body).to.include('Space House, Jan, 3000, wow');
         done();
       })
     })
