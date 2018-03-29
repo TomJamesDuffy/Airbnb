@@ -11,8 +11,4 @@ User.prototype.availableProperties = function(){
   return this._propertyList;
 }
 
-User.prototype.createProperty = function(name, desc, price, dates){
-  return new Property(name, desc, price, dates);
-}
-
 module.exports = User

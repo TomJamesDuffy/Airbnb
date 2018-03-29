@@ -1,7 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
-var bnb = require('./src/bnb');
 var Property = require('./src/property');
 var User = require('./src/user');
 
@@ -36,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
   });
 
   app.post('/property/new', function(req, res){
-  user.list(new Property(req.body.name, req.body.dates, req.body.price, req.body.desc, req.body.photo))
+  user.list(new Property(req.body.name, req.body.desc, req.body.price, req.body.dates, req.body.photo))
     res.redirect('/property');
   });
 
