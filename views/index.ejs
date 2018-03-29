@@ -3,14 +3,17 @@
 <div class="center">
 <% include partials/header%>
 <h1 style="color:White;"> Welcome to Nebula</h1>
-<form method="GET" action="/property/new">
-<input type = "submit" value="Add Property">
+<form method="GET" action="/property/new" id="add">
+<button type="submit" class="btn btn-outline-warning" form="add" value="Submit">Add Property</button>
 </form>
 <ul>
 <% user.availableProperties().forEach(function(property){ %>
-  <div>
-    <li><%= property._details.name  %>, <%= property._details.desc  %>, <%= property._details.price  %>, <%= property._details.dates  %>  </li>
-    <img src="<%= property._details.photo  %>" style="height: 200px; width: 200px;">
+  <div class="list-group">
+    <li><%= property._details.name  %></li>
+    <li><%= property._details.desc  %></li>
+    <li> <%= property._details.price  %></li>
+    <li> <%= property._details.dates  %>  </li>
+    <li><img src="<%= property._details.photo  %>" style="height: 200px; width: 200px;"></li>
   </div>
 <% }) %>
 </ul>
