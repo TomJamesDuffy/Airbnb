@@ -3,17 +3,9 @@
 }
 
 body{
-    background-image:url("https://image.ibb.co/jQqPAS/mars_the_red_planet_wallpaper_2560x1600.jpg");
+    background-image:url("https://astronaut.com/wp-content/uploads/2017/12/asgardia-space-nation-orbital-colony-earth-illustration.jpg");
     background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover;
     font-family: "courier";
-}
-
-label {
-	/* cursor: pointer; */
-	color: white;
-	display: block;
-	padding: 4px;
-	margin: 3px;
 }
