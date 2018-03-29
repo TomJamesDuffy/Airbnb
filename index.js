@@ -5,6 +5,7 @@ var Property = require('./src/property');
 var User = require('./src/user');
 
 var app = express();
+app.use(express.static('/public'));
 
 //View Engine
 app.set('view engine', 'ejs');

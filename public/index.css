@@ -1,0 +1,15 @@
+.center {
+  text-align: center;
+}
+
+body {
+  background-image: url(http://i.dailymail.co.uk/i/pix/2016/03/21/13/326D8FAB00000578-3502670-image-a-54_1458565689782.jpg)
+}
+
+label {
+	/* cursor: pointer; */
+	color: white;
+	display: block;
+	padding: 4px;
+	margin: 3px;
+}
