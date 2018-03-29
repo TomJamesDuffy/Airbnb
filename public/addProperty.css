@@ -1,0 +1,20 @@
+.center {
+  text-align: center;
+}
+
+body{
+    background-image:url("https://astronaut.com/wp-content/uploads/2017/12/asgardia-space-nation-orbital-colony-earth-illustration.jpg");
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "courier";
+}
+
+
+label {
+	/* cursor: pointer; */
+	color: yellow;
+	display: block;
+	padding: 4px;
+	margin: 3px;
+}

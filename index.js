@@ -1,7 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
-var bnb = require('./src/bnb');
 var Property = require('./src/property');
 var User = require('./src/user');
 var DatabaseConnection = require('./src/databaseConnection');

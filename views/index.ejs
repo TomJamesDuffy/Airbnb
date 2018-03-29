@@ -3,11 +3,11 @@
 <div class="center">
 <% include partials/header%>
 <h1 style="color:White;"> Welcome to Nebula</h1>
-<form method="GET" action="/property/new">
-<input type = "submit" value="Add Property">
+<form method="GET" action="/property/new" id="add">
+<button type="submit" class="btn btn-outline-warning" form="add" value="Submit">Add Property</button>
 </form>
 <ul>
-<% propAll.forEach(function(property){ %>
+<% propAll.reverse().forEach(function(property){ %>
   <div>
     <li><%= property.name  %>, <%= property.desc  %>, <%= property.price  %>, <%= property.dates  %>  </li>
     <img src="<%= property.photo  %>" style="height: 200px; width: 200px;">

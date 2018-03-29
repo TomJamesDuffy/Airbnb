@@ -1,18 +1,21 @@
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/addProperty.css">
+<div class="center">
 <% include partials/header%>
-<h1> Welcome to Nebula</h1>
-<form method="POST" action="/property/new/">
-<label> Name <label>
-<input type="text" name="name">
-<label> Dates <label>
-<input type="text" name="dates">
-<label> Price <label>
-<input type="text" name="price">
-<label> Description <label>
-<textarea type="text" name = "desc"></textarea>
-<label> Photo <label>
-<input type="text" name="photo">
-<input type = "submit" value="Submit">
+<h1 style="color:White;">Add a property to host</h1>
+<form method="POST" action="/property/new/" id="add">
+<label for="name"> Name </label>
+<input type="text" name="name"><br>
+<label> Dates </label>
+<input type="text" name="dates"><br>
+<label> Price </label>
+<input type="text" name="price"><br>
+<label> Description </label>
+<textarea type="text" name ="desc"></textarea><br>
+<label> Photo </label>
+<input type="text" name="photo"><br>
+<br>
+<button type="submit" class="btn btn-outline-warning" form="add" value="Submit">Submit</button>
 </form>
 <% include partials/footer%>
 </div>
