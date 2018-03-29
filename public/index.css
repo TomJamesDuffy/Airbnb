@@ -9,3 +9,5 @@ body{
     background-size: cover;
     font-family: "courier";
 }
+
+h1 { background-color: #50394c; color: #ffffff; padding: 10px 10px; }

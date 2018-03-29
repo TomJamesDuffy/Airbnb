@@ -6,10 +6,13 @@
 <form method="GET" action="/property/new" id="add">
 <button type="submit" class="btn btn-outline-warning" form="add" value="Submit">Add Property</button>
 </form>
-<ul>
+<ul class="list">
 <% propAll.reverse().forEach(function(property){ %>
   <div>
-    <li><%= property.name  %>, <%= property.desc  %>, <%= property.price  %>, <%= property.dates  %>  </li>
+    <li><%= property.name  %></li>
+    <li><%= property.desc  %></li>
+    <li><%= property.price  %></li>
+    <li><%= property.dates  %></li>
     <img src="<%= property.photo  %>" style="height: 200px; width: 200px;">
   </div>
 <% }) %>
