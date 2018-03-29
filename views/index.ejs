@@ -9,10 +9,10 @@
 <ul class="list">
 <% propAll.reverse().forEach(function(property){ %>
   <div>
-    <li><%= property.name  %></li>
-    <li><%= property.desc  %></li>
-    <li><%= property.price  %></li>
-    <li><%= property.dates  %></li>
+    <%= property.name  %><br>
+    <%= property.desc  %><br>
+    <%= property.price  %><br>
+    <%= property.dates  %><br>
     <img src="<%= property.photo  %>" style="height: 200px; width: 200px;">
   </div>
 <% }) %>

@@ -11,3 +11,8 @@ body{
 }
 
 h1 { background-color: #50394c; color: #ffffff; padding: 10px 10px; }
+
+ul  {
+  font: 200 25px/1.5 Georgia, Times New Roman;
+  color: white;
+}
