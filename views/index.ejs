@@ -7,10 +7,10 @@
 <input type = "submit" value="Add Property">
 </form>
 <ul>
-<% user.availableProperties().forEach(function(property){ %>
+<% propAll.forEach(function(property){ %>
   <div>
-    <li><%= property._details.name  %>, <%= property._details.desc  %>, <%= property._details.price  %>, <%= property._details.dates  %>  </li>
-    <img src="<%= property._details.photo  %>" style="height: 200px; width: 200px;">
+    <li><%= property.name  %>, <%= property.desc  %>, <%= property.price  %>, <%= property.dates  %>  </li>
+    <img src="<%= property.photo  %>" style="height: 200px; width: 200px;">
   </div>
 <% }) %>
 </ul>

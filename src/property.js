@@ -11,4 +11,11 @@ Property.prototype.getDetails = function(){
   return this._details;
 }
 
+
+Property.prototype.all = function(){
+}
+
+
+
+
 module.exports = Property
