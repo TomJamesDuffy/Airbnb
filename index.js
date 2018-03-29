@@ -4,6 +4,11 @@ var path = require('path');
 var bnb = require('./src/bnb');
 var Property = require('./src/property');
 var User = require('./src/user');
+var DatabaseConnection = require('./src/databaseConnection');
+var mongoose = require('mongoose');
+
+var Property = require('./models/property');
+mongoose.connect('mongodb://localhost/mydb');
 
 var app = express();
 app.use(express.static('/public'));
@@ -18,7 +23,6 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 // Set Static Path for public file
 app.use(express.static(path.join(__dirname, 'public')));
-  console.log(User)
   var user = new User('Elon Musk');
 
   app.get('/', function(req, res){
@@ -26,17 +30,22 @@ app.use(express.static(path.join(__dirname, 'public')));
   });
 
   app.get('/property', function(req, res){
-  res.render("index", {
-    user: user
+    console.log(Property)
+    Property.find({}, function(err, propAll) {
+    console.log(propAll);
+    if (err) throw err;
+    res.render('index', {
+      'propAll': propAll
     });
   });
+});
 
   app.get('/property/new', function(req, res){
   res.render("addProperty");
   });
 
   app.post('/property/new', function(req, res){
-  user.list(new Property(req.body.name, req.body.dates, req.body.price, req.body.desc, req.body.photo))
+  user.createProperty(req.body.name, req.body.dates, req.body.price, req.body.desc, req.body.photo)
     res.redirect('/property');
   });
 
