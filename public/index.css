@@ -2,8 +2,12 @@
   text-align: center;
 }
 
-body {
-  background-image: url(http://i.dailymail.co.uk/i/pix/2016/03/21/13/326D8FAB00000578-3502670-image-a-54_1458565689782.jpg)
+body{
+    background-image:url("https://image.ibb.co/jQqPAS/mars_the_red_planet_wallpaper_2560x1600.jpg");
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "courier";
 }
 
 label {
