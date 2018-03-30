@@ -22,15 +22,15 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 // Set Static Path for public file
 app.use(express.static(path.join(__dirname, 'public')));
-  var user = new User('Elon Musk');
+var user = new User('Elon Musk');
 
-  app.get('/', function(req, res){
-    res.redirect('/property');
-  });
+app.get('/', function(req, res){
+  res.redirect('/property');
+});
 
-  app.get('/property', function(req, res){
-    console.log(Property)
-    Property.find({}, function(err, propAll) {
+app.get('/property', function(req, res){
+  console.log("get property", Property);
+  Property.find({}, function(err, propAll) {
     console.log(propAll);
     if (err) throw err;
     res.render('index', {
@@ -39,15 +39,22 @@ app.use(express.static(path.join(__dirname, 'public')));
   });
 });
 
-  app.get('/property/new', function(req, res){
+app.get('/property/new', function(req, res){
   res.render("addProperty");
-  });
+});
 
-  app.post('/property/new', function(req, res){
-  user.createProperty(req.body.name, req.body.dates, req.body.price, req.body.desc, req.body.photo)
+app.post('/property/new', function(req, res){
+  user.createProperty(
+    req.body.name,
+    req.body.dates,
+    req.body.price,
+    req.body.desc,
+    req.body.photo);
+  setTimeout(function () {
     res.redirect('/property');
   });
+});
 
-  app.listen(3000, function() {
+app.listen(3000, function() {
   console.log('Server Started on Port 3000...');
-  });
+});
